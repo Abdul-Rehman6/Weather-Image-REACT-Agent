@@ -135,3 +135,29 @@ By observing the Agent's decision-making in real-time within the console output,
 ### 📁 Project Structure
 
 The project directory is concise, focused on execution and configuration:
+
+. ├── Image_Weather_Ai_Agent.ipynb # Main executable notebook containing the Agent and tool definitions. ├── .env # Environment variables file for secure storage of all API keys (REQUIRED). └── requirements.txt # Python dependencies list for easy setup.
+
+
+---
+
+### 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! If you have suggestions for new tools (e.g., currency converter, flight search) that could be integrated into this Agent, or improvements to the existing tools, please feel free to open a Pull Request.
+
+#### Contribution Steps
+
+1.  Fork the repository.
+2.  Create a descriptive new branch:
+    ```bash
+    git checkout -b feature/add-new-tool
+    ```
+3.  Commit your changes using a clear, conventional commit message:
+    ```bash
+    git commit -m 'feat: Add new tool for currency conversion'
+    ```
+4.  Push your branch to your forked repository:
+    ```bash
+    git push origin feature/add-new-tool
+    ```
+5.  Open a **Pull Request** with a clear description of the feature or fix.
