@@ -101,3 +101,37 @@ agent_executer = AgentExecutor(
     tools=[search_tool, get_weather_data, analyze_weather_from_image],
     verbose=True
 )
+
+
+---
+
+### 2. Agent Execution Examples
+
+The table below demonstrates the Agent's dynamic **tool-switching ability** based on the input query, showcasing the ReAct (Reasoning and Acting) framework in action.
+
+| Input Query | Expected Agent Behavior | Tool Used |
+| :--- | :--- | :--- |
+| `"Can you tell me the population of Capital of pakistan"` | Determines it needs external, general facts and current data beyond its core weather domain. | `tavily_search` |
+| `"Analyze this image: [URL]"` | Recognizes the multimodal input (image URL) and the request for descriptive analysis. | `analyze_weather_from_image` |
+| `What is the current temperature in London?` | Identifies the need for specific, real-time structured data (weather). | `get_weather_data` |
+
+The setting **`verbose=True`** in the `AgentExecutor` allows you to see the **Thought/Action/Observation loop** in the console, which is crucial for understanding the ReAct reasoning process.
+
+---
+
+### 💡 Debugging & Traceability
+
+By observing the Agent's decision-making in real-time within the console output, you gain immediate insights into its performance and logic.
+
+* **ReAct Loop Analysis:** The verbose output reveals the Agent's internal monologue:
+    * **Thought:** The reasoning for choosing a tool.
+    * **Action:** The specific tool called and the input arguments provided to it.
+    * **Observation:** The raw output returned by the tool (the result of the action).
+* **Tool Output Inspection:** You can verify the data quality by examining the tool outputs, such as the raw results from the `tavily_search` or the detailed, descriptive analysis from the `analyze_weather_from_image` tool, confirming the multimodal capabilities are functioning as expected.
+* **Error Handling (Implicit):** If a tool call were to fail (e.g., a network error or an expired API key), the **Observation** would contain the error message. The Agent would then attempt to **Reason** about how to proceed or simply inform the user of the failure.
+
+---
+
+### 📁 Project Structure
+
+The project directory is concise, focused on execution and configuration:
