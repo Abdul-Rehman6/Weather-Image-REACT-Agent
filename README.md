@@ -18,15 +18,15 @@ The Agent utilizes the **ReAct (Reasoning and Acting)** prompt to dynamically se
 
 ---
 
-## ✨ Agent Capabilities & Tools
+### 🛠️ Core Tools Overview
 
-The core of this Agent is its ability to choose the most appropriate tool for the task, showcasing a practical application of tool-use in LLM development.
+The Agent is built with three distinct tools to handle a diverse range of user inquiries, demonstrating powerful multimodal and real-time data access capabilities:
 
-| Tool Name | Type | Purpose & Integration |
+| Tool | Type | Key Functionality |
 | :--- | :--- | :--- |
-| `analyze_weather_from_image` | **Custom Multimodal (GPT-4o-mini)** | Analyzes a given `image_url` of a sky or scene to **describe the visual weather conditions** (e.g., clear, cloudy, rainy) and image content. |
-| `get_weather_data` | **Custom API Wrapper** | Fetches structured, **real-time weather data** (temperature, humidity, wind speed, etc.) for a specific `location` using the Weatherstack API. |
-| `tavily_search` | **Pre-built Web Search** | Provides **general knowledge and current information** (e.g., population data, historical facts) essential for handling general queries outside of the weather domain. |
+| **`analyze_weather_from_image`** | Custom (Multimodal Vision) | Analyzes a provided image URL using GPT-4o-mini to return a detailed description of the weather, sky conditions, and image content. |
+| **`get_weather_data`** | Custom (API Wrapper) | Fetches structured, real-time data like temperature, humidity, and wind speed for a specified location from a dedicated weather API. |
+| **`tavily_search`** | Pre-built (Web Search) | Provides up-to-date, general knowledge for answering questions outside the scope of weather data, such as population, history, or current events. |
 
 ---
 
